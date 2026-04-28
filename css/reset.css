@@ -1,0 +1,7 @@
+/* css/reset.css — Minimal reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+img, svg { display: block; max-width: 100%; }
+button { cursor: pointer; border: none; background: none; }
+input { border: none; outline: none; background: none; }
+ul, ol { list-style: none; }

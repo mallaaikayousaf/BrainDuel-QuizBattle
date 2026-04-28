@@ -1,0 +1,58 @@
+/* css/theme.css — Design tokens */
+:root {
+  /* Background */
+  --bg-deep:    #060810;
+  --bg-mid:     #0d1020;
+  --bg-surface: #141828;
+  --bg-panel:   #1a2035;
+  --bg-card:    #1e263a;
+
+  /* Player 1 — hot magenta */
+  --p1-a: #ff0066;
+  --p1-b: #ff6a00;
+  --p1-glow: rgba(255, 0, 102, 0.45);
+  --p1-text: #ff4488;
+
+  /* Player 2 — electric cyan */
+  --p2-a: #00d4ff;
+  --p2-b: #00ff88;
+  --p2-glow: rgba(0, 212, 255, 0.45);
+  --p2-text: #44ddff;
+
+  /* Neutrals */
+  --white:     #f0f4ff;
+  --muted:     #6b7699;
+  --border:    rgba(255,255,255,0.07);
+  --border-bright: rgba(255,255,255,0.15);
+
+  /* Status */
+  --correct:   #00ff88;
+  --wrong:     #ff2244;
+  --timeout:   #ff8800;
+  --system:    #8888ff;
+
+  /* Difficulty */
+  --diff-easy:   #00ff88;
+  --diff-medium: #ffcc00;
+  --diff-hard:   #ff4444;
+
+  /* Typography */
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body:    'Rajdhani', sans-serif;
+  --font-mono:    'Share Tech Mono', monospace;
+
+  /* Timing */
+  --t-fast: 150ms;
+  --t-mid:  300ms;
+  --t-slow: 600ms;
+}
+
+/* Base */
+body {
+  font-family: var(--font-body);
+  background: var(--bg-deep);
+  color: var(--white);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}

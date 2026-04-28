@@ -1,0 +1,108 @@
+/* css/animations.css — Keyframes & animation classes */
+
+/* ── KEYFRAMES ── */
+@keyframes vsPulse {
+  0%, 100% { transform: scale(1);   opacity: 0.6; }
+  50%       { transform: scale(1.15); opacity: 1;   }
+}
+
+@keyframes correctFlash {
+  0%   { background: rgba(0, 255, 136, 0.3); }
+  100% { background: transparent; }
+}
+
+@keyframes wrongShake {
+  0%   { transform: translateX(0); }
+  15%  { transform: translateX(-8px); }
+  30%  { transform: translateX(8px); }
+  45%  { transform: translateX(-6px); }
+  60%  { transform: translateX(6px); }
+  75%  { transform: translateX(-3px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-20px); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(20px); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(10px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes scorePopP1 {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.18); color: var(--p1-text); text-shadow: 0 0 30px var(--p1-glow); }
+  100% { transform: scale(1); }
+}
+
+@keyframes scorePopP2 {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.18); color: var(--p2-text); text-shadow: 0 0 30px var(--p2-glow); }
+  100% { transform: scale(1); }
+}
+
+@keyframes statusFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes buyFlash {
+  0%   { box-shadow: none; }
+  40%  { box-shadow: 0 0 20px rgba(255, 220, 0, 0.6); }
+  100% { box-shadow: none; }
+}
+
+@keyframes timerCritical {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+/* ── ANIMATION CLASSES ── */
+.anim-correct { animation: correctFlash 0.5s ease forwards; }
+.anim-wrong   { animation: wrongShake   0.5s ease; }
+
+.chat-msg.p1  { animation: slideInLeft  0.3s ease; }
+.chat-msg.p2  { animation: slideInRight 0.3s ease; }
+.chat-msg.sys { animation: slideInUp    0.3s ease; }
+
+.score-pop-p1 { animation: scorePopP1 0.5s ease; }
+.score-pop-p2 { animation: scorePopP2 0.5s ease; }
+
+.status-update { animation: statusFadeIn 0.3s ease; }
+
+.shop-item.bought { animation: buyFlash 0.6s ease; }
+
+.timer-crit { animation: timerCritical 0.6s ease infinite; }
+
+/* Staggered option entrance */
+.option-btn { animation: slideInUp 0.25s ease both; }
+.option-btn:nth-child(1) { animation-delay: 0.00s; }
+.option-btn:nth-child(2) { animation-delay: 0.05s; }
+.option-btn:nth-child(3) { animation-delay: 0.10s; }
+.option-btn:nth-child(4) { animation-delay: 0.15s; }
+
+/* Frozen turn overlay */
+.frozen-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 180, 255, 0.12);
+  border: 2px solid var(--p2-a);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.15em;
+  color: var(--p2-a);
+  pointer-events: none;
+  z-index: 10;
+  animation: vsPulse 1s ease-in-out infinite;
+}
